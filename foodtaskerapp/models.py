@@ -54,8 +54,8 @@ class Order(models.Model):
         (DELIVERED, "Delivered"),
     )
 
-    customer = models.ForeignKey(Customer)
-    restaurant = models.ForeignKey(Restaurant)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     driver = models.ForeignKey(Driver, blank = True, null = True)
     address = models.CharField(max_length=500)
     total = models.IntegerField()
